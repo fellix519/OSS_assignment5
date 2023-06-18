@@ -161,6 +161,7 @@
     <ClCompile Include="InGame_frame.c" />
     <ClCompile Include="Main.c" />
     <ClCompile Include="Model.c" />
+    <ClCompile Include="UI.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h" />

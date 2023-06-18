@@ -69,7 +69,7 @@ int printStartTitle() { //시작화면 출력
 				return 0;
 			}
 			if (indicator == 1) {
-				showRecord();
+				//showRecord();
 			}
 			if (indicator == 2) {
 				return 2;
@@ -127,82 +127,4 @@ void showOpeningScreen() {
 	alignCenter("그냥 타이밍에 맞게 SPACE만 누르자!!", midY + 5);
 	alignCenter("Press Any Key", midY + 7);
 	_getch();
-}
-void showRecord() {
-
-	FILE* f = fopen("record.txt", "r");
-
-	char stage1Score[10];
-	char stage1Record[20] = "Stage 1 : ";
-
-	fscanf(f, "%s", stage1Score);
-	strcat(stage1Record, stage1Score);
-
-	system("cls");
-	alignCenter("RECORD", midY - 4);
-	alignCenter(stage1Record, midY - 2);
-	alignCenter("Press Any Key...(DEL to reset record)", midY + 2);
-
-	fclose(f);
-
-	int kb;
-	kb = getch();
-	if (kb == 224) {
-		kb = getch();
-		if (kb == DEL || kb == 83) {
-			if (ResetRecord()) {
-				FILE* f = fopen("record.txt", "w");
-
-				fputs("0\n", f);
-
-				fclose(f);
-
-				alignCenter("Deleted completely", midY - 4);
-			}
-		}
-	}
-}
-int ResetRecord() {
-	int kb;
-	int indicator = 0;
-
-	char chat1[] = "  Y";
-	char chat1_indicated[] = "▶Y";
-	char chat2[] = "  N";
-	char chat2_indicated[] = "▶N";
-
-	system("cls");
-	while (1) {
-		if (indicator == 0) {
-			alignCenter("Are you sure to reset record", midY - 2);
-			alignCenter(chat1_indicated, midY);
-			alignCenter(chat2, midY + 2);
-		}
-		else if (indicator == 1) {
-			alignCenter("Are you sure to reset record", midY - 2);
-			alignCenter(chat1, midY);
-			alignCenter(chat2_indicated, midY + 2);
-		}
-
-		kb = _getch();
-		if (kb == 224) {
-			kb = _getch();
-			if (kb == DOWN) {
-				indicator = 1;
-			}
-			if (kb == UP) {
-				indicator = 0;
-			}
-		}
-		else if (kb == SPACE || kb == ENTER) {
-			if (indicator == 0) {
-				return 1;
-			}
-			else {
-				return 0;
-			}
-		}
-		system("cls");
-	}
-	return 0;
 }
