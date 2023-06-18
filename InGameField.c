@@ -103,4 +103,33 @@ void DrawGameBoard(int rotatedStage) {
 		break;
 	}
 }
-//void CreateWall()
+void CreateWall() {
+	switch (rotatedStage) {
+	case 0:
+		for (int i = 0; i < GBOARD_HEIGHT; i++) {
+			SetCurrentCursorPos(GBOARD_ORIGIN_X + (GBOARD_WIDTH - 1) * 2, GBOARD_ORIGIN_Y + GBOARD_HEIGHT - i - 1);
+			printf("¢Ì");
+		}
+		break;
+	case 1:
+		for (int i = 0; i < GBOARD_WIDTH; i++) {
+			SetCurrentCursorPos(GBOARD_ORIGIN_X + i * 2, GBOARD_ORIGIN_Y);
+			printf("¢Ì");
+		}
+		break;
+	case 2:
+		for (int i = 0; i < GBOARD_HEIGHT; i++) {
+			SetCurrentCursorPos(GBOARD_ORIGIN_X, GBOARD_ORIGIN_Y + GBOARD_HEIGHT - i - 1);
+			printf("¢Ì");
+		}
+		break;
+	case 3:
+		for (int i = 0; i < GBOARD_WIDTH - 4; i++) {
+			SetCurrentCursorPos(GBOARD_ORIGIN_X + (i + 4) * 2, GBOARD_ORIGIN_Y + GBOARD_HEIGHT);
+			printf("¢Ì");
+		}
+		break;
+	default:
+		break;
+	}
+}
