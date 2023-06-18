@@ -18,10 +18,46 @@ void dropPlayer() {
 	}
 	SetCurrentCursorPos(0, 0);
 }
-//int JumpToNextStage()
+int JumpToNextStage() {
+	//캐릭터 위치가 벽을 남겨두고 4칸 앞에 있는지 확인
+	//만약 그러면 돌기 모션 하면서 다음 90도 회전된 캐릭터 모양 만들기
+	//다음 스테이지 시작
+	switch (rotatedStage) {
+	case 0:
+		if (curPos.X >= GBOARD_ORIGIN_X + (GBOARD_WIDTH - 2) * 2) {
+			rotatedStage++;
+			curPos.X = GBOARD_ORIGIN_X + GBOARD_WIDTH * 2 - 8;
+			curPos.Y = GBOARD_ORIGIN_Y + GBOARD_HEIGHT - 6;
+			return 1;
+		}
+	case 1:
+		if (curPos.Y <= GBOARD_ORIGIN_Y + 1) {
+			rotatedStage++;
+			curPos.X = GBOARD_ORIGIN_X + GBOARD_WIDTH * 2 - 12;
+			curPos.Y = GBOARD_ORIGIN_Y + 1;
+			return 1;
+		}
+	case 2:
+
+		if (curPos.X <= GBOARD_ORIGIN_X + 2) {
+			rotatedStage++;
+			curPos.X = GBOARD_ORIGIN_X + 2;
+			curPos.Y = GBOARD_ORIGIN_Y + 5;
+			return 1;
+		}
+	case 3:
+		if (curPos.Y >= GBOARD_ORIGIN_Y + GBOARD_HEIGHT) {
+			resetGame();
+			printEndingScreen();
+			return 2;
+		}
+	default:
+		return 0;
+	}
+}
 void DrawGameBoard(int rotatedStage) {
 	int HorV = GBOARD_WIDTH;
-	int* p;
+	int* p=NULL;
 	if (rotatedStage % 2 == 0) {
 		HorV = GBOARD_WIDTH;
 		p = gameBoardInfoHorizon;
