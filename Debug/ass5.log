@@ -1,0 +1,5 @@
+﻿  InGame.c
+InGame_frame.obj : error LNK2019: _printStartScreen 외부 기호(참조 위치: _InGame 함수)에서 확인하지 못했습니다.
+Main.obj : error LNK2019: _SetCurrentCursorPos 외부 기호(참조 위치: _main 함수)에서 확인하지 못했습니다.
+Main.obj : error LNK2019: _printStartTitle 외부 기호(참조 위치: _main 함수)에서 확인하지 못했습니다.
+D:\j\학교\ass5\Debug\ass5.exe : fatal error LNK1120: 3개의 확인할 수 없는 외부 참조입니다.
