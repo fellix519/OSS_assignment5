@@ -16,7 +16,7 @@ int InGame() {
 }
 int PlayGame() {
 	//dropPlayer to land
-	dropPlayer();
+	dropPlayer();// 시작화면에서 지면에 살짝 떠있는 캐릭터가 땅에 떨어지며 게임 시작
 	//player Location
 	setCurrentPlayerPos(STARTING_POINT_WIDTH * 2, GBOARD_HEIGHT - 3);
 	//remove cursor
@@ -29,9 +29,9 @@ int PlayGame() {
 		while (rotatedStage < 4) {//stage 1,2,3,4
 			while (1) {//looop for one stage
 				//doMotion();
-				if (eog == 0)//end of game
-					shiftScreenLeft();
-				if (eog == 0 && printObstacle() == 0) {//end of map
+				if (eog == 0)//end of stage !=false
+					shiftScreenLeft(); // stage keep moves
+				if (eog == 0 && printObstacle() == 0) {//every obstacle came out
 					eog = 1;
 				}
 
@@ -40,25 +40,26 @@ int PlayGame() {
 				if (type != -1) {//detectCollision result -> positive
 					if (life == 0) {
 						//PlaySound(NULL, 0, 0);
-						return printGameOver();
+						//return printGameOver();
+						return 0;//printGameOver() dummy
 					}
 
 				}
 
-				if (eog == 1) {
-					if (rotatedStage == 0)
-						;//curPos.X += 2;
+				if (eog == 1) {//if game ends
+					if (rotatedStage == 0)//// go to next stage : 4 stage version to move
+						curPos.X += 2; //player location change
 					else if (rotatedStage == 1)
-						;//curPos.Y--;
+						curPos.Y--; 
 					else if (rotatedStage == 2)
-						;//curPos.X -= 2;
+						curPos.X -= 2; 
 					else if (rotatedStage == 3)
-						;//curPos.Y++;
-					int tmp = JumpToNextStage();
+						curPos.Y++;
+					int tmp = JumpToNextStage(); // show animation that jump to next stage and return factor
 					if (tmp == 1) {
 						break;
 					}
-					else if (tmp == 2) {
+					else if (tmp == 2) {//JumpToNextStage()가 검사결과 2를 반환 : 마지막 스테이지->game loop 탈출, 종료
 						return 0;
 					}
 				}
