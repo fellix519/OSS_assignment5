@@ -9,11 +9,16 @@
 //InGame 특별대우
 int InGame() {
 
-	int startButton = printStartScreen();
+	int startButton;// = printStartScreen();
 
 	if (startButton/* == SPACE*/)
 		return PlayGame();
 }
 int PlayGame() {
-	
+	//dropPlayer to land
+	//player Location
+	//remove cursor
+	//run the stage : game loop
+		//stage 1,2,3,4
+		//
 }
