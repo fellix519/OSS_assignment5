@@ -9,7 +9,7 @@
 //#define ScreenWidth 40
 #define MaxObstacle 100
 #define MaxMotion 100
-//
+
 #define GBOARD_WIDTH 45
 #define GBOARD_HEIGHT 30
 #define GBOARD_ORIGIN_X 30

@@ -121,7 +121,6 @@ void printEndingScreen() {
 	system("cls");
 	_getch();
 }
-
 int printGameOver() {
 
 	char msg1[] = "  Play Again";
@@ -182,17 +181,17 @@ int printGameOver() {
 }
 void resetGame() {
 	int scoreRec=0;
-
-	//FILE* f = fopen_s("record.txt", "rt");
-	//fscanf_s(f, "%d", &scoreRec);
-//	fclose(f);
-
-	if (scoreRec < score) {
-		//FILE* f = fopen_s("record.txt", "wt");
-		//printf("ping"); Sleep(1000);
-	//	fprintf(f, "%d\n", score);
-		//fclose(f);
-	}
+//
+////	FILE* f = fopen("record.txt", "rt");
+//	//fscanf(f, "%d", &scoreRec);
+//	//fclose(f);
+//
+//	if (scoreRec < score) {
+//		FILE* f = fopen("record.txt", "wt");
+//		//printf("ping"); Sleep(1000);
+//		fprintf(f, "%d\n", score);
+//		fclose(f);
+//	}
 
 
 	flag = 1;

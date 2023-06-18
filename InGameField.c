@@ -57,7 +57,7 @@ int JumpToNextStage() {
 }
 void DrawGameBoard(int rotatedStage) {
 	int HorV = GBOARD_WIDTH;
-	int* p=NULL;
+	int*p =NULL;
 	if (rotatedStage % 2 == 0) {
 		HorV = GBOARD_WIDTH;
 		p = gameBoardInfoHorizon;
