@@ -71,7 +71,7 @@ int PlayGame() {
 			DrawGameBoard(rotatedStage);//draw new map land : for next stage
 			eog = 0; // next stage will be start
 			currentTime = 0; //set Timer 0
-			obstacleCount = 0;
+			obstacleCount = 0; //장애물 갯수 ( 맵 길이와 일맥상통)
 			playerInfo = rotatedStage * 24; // turn the character model angle for next stage
 			flag = 1;
 		}
