@@ -1,5 +1,23 @@
+#include "InGame.h"
+#include "Cursor.h"
+#include "Character.h"
+#include "Model.h"
+#include "UI.h"
+#include "Root.h"
+#include<conio.h>
+#pragma comment(lib,"winmm.lib")
 //필드 관련 함수
-//void dropPlayer()
+void dropPlayer() {
+
+	for (int i = 0; i < 8; i++) {
+		//SetCurrentCursorPos(GBOARD_ORIGIN_X + STARTING_POINT_WIDTH * 2, GBOARD_ORIGIN_Y + GBOARD_HEIGHT - STARTING_POINT_HEIGHT + i);
+		Showcharacter(Character[0], GBOARD_ORIGIN_X + STARTING_POINT_WIDTH * 2, GBOARD_ORIGIN_Y + GBOARD_HEIGHT - STARTING_POINT_HEIGHT + i);
+		Sleep(50);
+		if (i < 7)
+			DeleteCh(Character[0], GBOARD_ORIGIN_X + STARTING_POINT_WIDTH * 2, GBOARD_ORIGIN_Y + GBOARD_HEIGHT - STARTING_POINT_HEIGHT + i);
+	}
+	SetCurrentCursorPos(0, 0);
+}
 //int JumpToNextStage()
 void DrawGameBoard(int rotatedStage) {
 	int HorV = GBOARD_WIDTH;
