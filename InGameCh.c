@@ -305,7 +305,17 @@ int doMotion(int stage) {
 	if (playerInfo % 8 == 0) {
 		playerInfo = rotatedStage * 24;
 	}
-	
+	//벽에 붙도록 키 중복입력 방지
+	if (playerInfo % 24 == 0) {
+		if (rotatedStage == 0)
+			curPos.Y = GBOARD_ORIGIN_Y + GBOARD_HEIGHT - 3;
+		else if (rotatedStage == 1)
+			curPos.X = GBOARD_ORIGIN_X + GBOARD_WIDTH * 2 - 8;
+		else if (rotatedStage == 2)
+			curPos.Y = GBOARD_ORIGIN_Y + 1;
+		else if (rotatedStage == 3)
+			curPos.X = GBOARD_ORIGIN_X + 2;
+	}
 
 	if (_kbhit()) {
 		int tmp = 0;
@@ -345,3 +355,45 @@ int doMotion(int stage) {
 
 		}
 	}
+
+	if (playerInfo >= 8 + 24 * rotatedStage && playerInfo < 12 + 24 * rotatedStage) {
+		if (rotatedStage == 0)
+			curPos.Y -= 2;
+		else if (rotatedStage == 1) {
+			curPos.X -= 4;
+		}
+		else if (rotatedStage == 2)
+			curPos.Y += 2;
+		else if (rotatedStage == 3)
+			curPos.X += 4;
+	}
+	else if (playerInfo >= 13 + 24 * rotatedStage && playerInfo < 16 + 24 * rotatedStage) {
+		if (rotatedStage == 0) {
+			curPos.Y += 2;
+			if (curPos.Y > GBOARD_ORIGIN_Y + GBOARD_HEIGHT - 3) {
+				curPos.Y = GBOARD_ORIGIN_Y + GBOARD_HEIGHT - 3;
+			}
+		}
+		else if (rotatedStage == 1) {
+			curPos.X += 4;
+			if (curPos.X > GBOARD_ORIGIN_X + GBOARD_WIDTH * 2 - 8)
+				curPos.X = GBOARD_ORIGIN_X + GBOARD_WIDTH * 2 - 8;
+		}
+		else if (rotatedStage == 2) {
+			curPos.Y -= 2;
+			if (curPos.Y < GBOARD_ORIGIN_Y + 4)
+				curPos.Y = GBOARD_ORIGIN_Y + 4;
+		}
+		else if (rotatedStage == 3) {
+			curPos.X -= 4;
+			if (curPos.X < GBOARD_ORIGIN_X + 8)
+				curPos.X = GBOARD_ORIGIN_X + 8;
+		}
+	}
+
+	//detectCollision 삽입
+	Showcharacter(Character[playerInfo], curPos.X, curPos.Y);
+
+	return 0;
+	//}
+}
