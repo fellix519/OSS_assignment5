@@ -283,3 +283,65 @@ int detectCollision() {
 	flag = 1;
 	return -1;
 }
+int doMotion(int stage) {
+	//int checkInfo = 1;
+	//if (currentTime%2 == 0) {
+	if (eog == 0) { //출현해야 할 장애물이 아직 남았을 시에는 캐릭터가 제자리에 있기 때문에 캐릭터의 자리의 모습을 지운다.
+		DeleteCh(Character[playerInfo], curPos.X, curPos.Y);
+	}
+	else {//출현해야 할 장애물이 모두 출현했다면 캐릭터가 앞으로 전진해야하기 때문에 캐릭터의 원래 자리의 모습을 지운다.
+		if (rotatedStage == 0)
+			DeleteCh(Character[playerInfo], curPos.X - 2, curPos.Y);
+		else if (rotatedStage == 1)
+			DeleteCh(Character[playerInfo], curPos.X, curPos.Y + 1);
+		else if (rotatedStage == 2)
+			DeleteCh(Character[playerInfo], curPos.X + 2, curPos.Y);
+		else if (rotatedStage == 3)
+			DeleteCh(Character[playerInfo], curPos.X, curPos.Y - 1);
+	}
+
+
+	playerInfo++;
+	if (playerInfo % 8 == 0) {
+		playerInfo = rotatedStage * 24;
+	}
+	
+
+	if (_kbhit()) {
+		int tmp = 0;
+		//  키 씹기
+		if (playerInfo >= 8 + 24 * rotatedStage) {
+			_getch();
+			return 0;
+		}
+		int kb = _getch();
+		if (kb == SPACE) {
+			if (currentTime < 5) {
+				return 0;
+			}
+			if (rotatedStage % 2 == 0) {
+				for (int i = 6; i < 14; i++) {
+					if (gameBoardInfoHorizon[i] == rotatedStage * 8 + 4) {
+						tmp = 1;
+						break;
+					}
+				}
+
+			}
+			else {
+				for (int i = 4; i < 12; i++) {
+					if (gameBoardInfoVertical[i] == rotatedStage * 8 + 4) {
+						tmp = 1;
+						break;
+					}
+				}
+			}
+			if (tmp == 1)
+				playerInfo = rotatedStage * 24 + 16;
+			else {
+				playerInfo = 8 + 24 * rotatedStage;
+				tmp = 0;
+			}
+
+		}
+	}
