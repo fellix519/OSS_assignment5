@@ -39,6 +39,12 @@
     <ClCompile Include="InGameField.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Character.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UI.h">

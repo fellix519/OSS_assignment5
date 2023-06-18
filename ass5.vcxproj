@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Character.c" />
     <ClCompile Include="Cursor.c" />
     <ClCompile Include="InGame.c" />
     <ClCompile Include="InGameCh.c" />
@@ -159,6 +160,7 @@
     <ClCompile Include="InGameUI.c" />
     <ClCompile Include="InGame_frame.c" />
     <ClCompile Include="Main.c" />
+    <ClCompile Include="Model.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h" />
