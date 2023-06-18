@@ -55,4 +55,11 @@ void clearScreen() {
 		}
 	}
 }
-//void deleteScreen(int x1, int y1, int x2, int y2)
+void deleteScreen(int x1, int y1, int x2, int y2) {
+	for (int y = y1; y <= y2; y++) {
+		for (int x = x1; x <= x2; x++) {
+			SetCurrentCursorPos(GBOARD_ORIGIN_X + x * 2, GBOARD_ORIGIN_Y + y);
+			printf("  ");
+		}
+	}
+}
