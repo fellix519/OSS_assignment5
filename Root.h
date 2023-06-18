@@ -10,10 +10,10 @@
 #define MaxObstacle 100
 #define MaxMotion 100
 //
-//#define GBOARD_WIDTH 45
-//#define GBOARD_HEIGHT 30
-//#define GBOARD_ORIGIN_X 30
-//#define GBOARD_ORIGIN_Y 6
+#define GBOARD_WIDTH 45
+#define GBOARD_HEIGHT 30
+#define GBOARD_ORIGIN_X 30
+#define GBOARD_ORIGIN_Y 6
 
 #define _Q 113
 #define _W 119

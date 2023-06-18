@@ -14,11 +14,11 @@ static int currentTime = 0;
 static int eog = 0;
 static int rotatedStage = 0;
 static int RATE = 50;
-//static int gameBoardInfoHorizon[GBOARD_WIDTH] = { 0 };
-//static int jumpInfoHorizon[GBOARD_WIDTH] = { 0 };
-//static int playerInfo = 0;
-//static int gameBoardInfoVertical[GBOARD_HEIGHT] = { 0 };
-//static int jumpInfoVertical[GBOARD_HEIGHT] = { 0 };
+static int gameBoardInfoHorizon[GBOARD_WIDTH] = { 0 };
+static int jumpInfoHorizon[GBOARD_WIDTH] = { 0 };
+static int playerInfo = 0;
+static int gameBoardInfoVertical[GBOARD_HEIGHT] = { 0 };
+static int jumpInfoVertical[GBOARD_HEIGHT] = { 0 };
 
 static int jumpArray[] = { 0,0,2,2,3,3,4,4,4,4,4,4,3,3,2,2 };
 
