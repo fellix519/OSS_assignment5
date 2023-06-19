@@ -10,7 +10,7 @@
 #include<mmsystem.h>//p;aysound  함수 포함 헤더
 int PlayGame() {
 	//플레이어 떨어지게
-	PlaySound(TEXT("emart_1.wav"), 0, SND_FILENAME | SND_ASYNC | SND_LOOP); //루프 재생
+	//PlaySound(TEXT("emart_1.wav"), 0, SND_FILENAME | SND_ASYNC | SND_LOOP); //루프 재생
 	//_getch();
 
 	//dropPlayer to land
@@ -32,7 +32,7 @@ int PlayGame() {
 			if (type != -1) {
 				//detectCollision result -> positive
 				if (life == 0) {
-					PlaySound(NULL, 0, 0);
+					//PlaySound(NULL, 0, 0);
 					return printGameOver();
 				}
 
@@ -709,7 +709,7 @@ void deleteScreen(int x1, int y1, int x2, int y2) {
 //UI 관련 함수
 void printEndingScreen() {
 	system("cls");
-	PlaySound(TEXT("Endding.wav"), 0, SND_FILENAME | SND_ASYNC | SND_LOOP); //루프 재생
+	//PlaySound(TEXT("Endding.wav"), 0, SND_FILENAME | SND_ASYNC | SND_LOOP); //루프 재생
 
 	system("cls");
 	alignCenter(" \"아...안돼..15분....15분만 빨랐다면...\" ", midY);
