@@ -168,6 +168,7 @@
     <ClInclude Include="Cursor.h" />
     <ClInclude Include="InGame.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="Obstacle.h" />
     <ClInclude Include="Root.h" />
     <ClInclude Include="UI.h" />
   </ItemGroup>
