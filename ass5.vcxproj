@@ -154,11 +154,6 @@
     <ClCompile Include="Character.c" />
     <ClCompile Include="Cursor.c" />
     <ClCompile Include="InGame.c" />
-    <ClCompile Include="InGameCh.c" />
-    <ClCompile Include="InGameEx.c" />
-    <ClCompile Include="InGameField.c" />
-    <ClCompile Include="InGameUI.c" />
-    <ClCompile Include="InGame_frame.c" />
     <ClCompile Include="Main.c" />
     <ClCompile Include="Model.c" />
     <ClCompile Include="UI.c" />

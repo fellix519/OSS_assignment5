@@ -18,25 +18,10 @@
     <ClCompile Include="Main.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="InGame_frame.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="InGame.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Cursor.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="InGameUI.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="InGameCh.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="InGameEx.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="InGameField.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Character.c">
